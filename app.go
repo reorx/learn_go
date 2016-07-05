@@ -12,5 +12,8 @@ func Run() {
 	fmt.Println("app.go")
 	nowtime := now.BeginningOfMinute()
 	fmt.Println(nowtime)
+
+	// only `package <name>` matters, not the name of the files
 	hello.SayHello()
+	hello.Greetings()
 }
