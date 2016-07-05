@@ -1,0 +1,6 @@
+package: github.com/reorx/learngo
+import:
+- package: github.com/go-kit/kit
+  subpackages:
+  - log
+- package: github.com/jinzhu/now

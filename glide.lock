@@ -1,0 +1,16 @@
+hash: 716facafbba8c4db5b2cca45994ebd744748ec9a67df389c0959e2e136f24689
+updated: 2016-07-05T18:55:37.977274069+08:00
+imports:
+- name: github.com/go-kit/kit
+  version: 46b7abc89d51ae89761da7b8a0f5f7d4b04de23b
+  subpackages:
+  - log
+- name: github.com/go-logfmt/logfmt
+  version: d4327190ff838312623b09bfeb50d7c93c8d9c1d
+- name: github.com/go-stack/stack
+  version: 100eb0c0a9c5b306ca2fb4f165df21d80ada4b82
+- name: github.com/jinzhu/now
+  version: d9861969c7a7e84746d341c09020c2ef8a617f8f
+- name: github.com/kr/logfmt
+  version: b84e30acd515aadc4b783ad4ff83aff3299bdfe0
+devImports: []
