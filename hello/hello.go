@@ -7,8 +7,10 @@ import (
 	"github.com/go-kit/kit/log"
 )
 
+// SayHello just say hello
 func SayHello() {
-	fmt.Println("SayHello")
+	logger := log.NewJSONLogger(os.Stdout)
+	logger.Log("SayHello")
 }
 
 func init() {
