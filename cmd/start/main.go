@@ -10,5 +10,5 @@ import (
 func main() {
 	logger := log.NewJSONLogger(os.Stdout)
 	logger.Log("cmd main")
-	learngo.Run()
+	learngo.Runit()
 }

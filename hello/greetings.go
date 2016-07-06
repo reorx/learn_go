@@ -1,9 +1,9 @@
 package hello
 
-import (
-	"fmt"
-)
+import "fmt"
 
+
+// Greetings print greetings
 func Greetings() {
 	fmt.Println("greetings")
 }

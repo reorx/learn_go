@@ -8,12 +8,15 @@ import (
 	"github.com/reorx/learngo/hello"
 )
 
-func Run() {
-	fmt.Println("app.go")
+var bar = "app.go"
+
+// Runit what you want
+func Runit() {
+	fmt.Println(bar)
 	nowtime := now.BeginningOfMinute()
 	fmt.Println(nowtime)
 
 	// only `package <name>` matters, not the name of the files
-	hello.SayHello()
+	hello.Hello()
 	hello.Greetings()
 }

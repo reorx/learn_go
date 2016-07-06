@@ -7,6 +7,6 @@ import (
 )
 
 func GoodBye() {
-	hello.SayHello()
+	hello.Hello()
 	fmt.Println("good bye")
 }
