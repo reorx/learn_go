@@ -1,8 +1,9 @@
 package math
 
 import (
-    "testing"
     "fmt"
+    "testing"
+    "github.com/stretchr/testify/assert"
 )
 
 
@@ -12,7 +13,5 @@ func TestPlus(t *testing.T) {
     x = 1
     y = 2
     z := Plus(x, y)
-    if z != 3 {
-        t.Error("Expect 3, got ", z)
-    }
+    assert.Equal(t, 3, z, "should be equal")
 }

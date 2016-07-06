@@ -6,3 +6,6 @@ run-end:
 
 gotags:
 	gotags -tag-relative=true -R=true -sort=true -f="tags" -fields=+l .
+
+test:
+	go test ./math
