@@ -40,4 +40,15 @@ func main() {
         //     fmt.Println("c > 0")
     }
 
+    trydefer()
+}
+
+func trydefer() {
+    x := 1
+    defer fmt.Println("deferred x value (1st)", x)
+    x++
+    fmt.Println("x", x)
+    defer fmt.Println("deferred x value (2nd)", x)
+    x++
+    fmt.Println("x", x)
 }
