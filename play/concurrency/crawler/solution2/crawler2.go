@@ -28,12 +28,19 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 		results <- &result{url, body, urls, err, depth}
 	}
 
-	go fetch(url, depth)
-	fetched[url] = true
+	fetching := 0
+	dispatch := func(url string, depth int) {
+		fetching++
+		go fetch(url, depth)
+		fetched[url] = true
+	}
+
+	dispatch(url, depth)
 
 	// 1 url is currently being fetched in background, loop while fetching
-	for fetching := 1; fetching > 0; fetching-- {
+	for fetching > 0 {
 		res := <-results
+		fetching--
 
 		// skip failed fetches
 		if res.err != nil {
@@ -52,9 +59,7 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 			if fetched[u] {
 				continue
 			}
-			fetching++
-			go fetch(u, res.depth-1)
-			fetched[u] = true
+			dispatch(u, res.depth-1)
 		}
 	}
 
