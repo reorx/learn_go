@@ -36,4 +36,53 @@ func main() {
 	fmt.Println("z after sign", z, ***z)
 	***z = 3
 	fmt.Println("b after sign", b, ***e, w)
+
+	f := "a str"
+	Recvpointer1(&f)
+	Recvpointer2(&f)
+
+	g := A{3}
+	g.Point()
+	(&g).Point()
+	gp := &g
+	gp.x = 4
+	// &g.Point()
+	gp.Point()
+
+	var h interface{}
+	h = &g
+	fmt.Printf("h %v %#v %T\n", h, h, h)
+
+	var i *interface{}
+	// i = &g
+	i = &h
+	fmt.Printf("i %v %#v %T\n", i, i, i)
+
+	var j int = 1
+	fmt.Println("j", j)
+	k := &j
+	*k = 2
+	fmt.Println("j", j)
+}
+
+func Recvpointer1(p *string) {
+	fmt.Printf("p %v %T %#v\n", p, p, p)
+}
+
+type stringp *string
+
+func Recvpointer2(p stringp) {
+	fmt.Printf("p %v %T %#v\n", p, p, p)
+}
+
+func Recvpointer3(p string) {
+	fmt.Printf("p %v %T %#v\n", p, p, p)
+}
+
+type A struct {
+	x int
+}
+
+func (a *A) Point() {
+	fmt.Println("A.x", a.x)
 }

@@ -7,14 +7,22 @@ import (
 	"github.com/go-kit/kit/log"
 )
 
-// SayHello print hello
+var RespG = Greetings()
+
+// Hello print hello
 func Hello() {
 	logger := log.NewJSONLogger(os.Stdout)
 	logger.Log("SayHello")
+	// Greetings()
 }
 
-func init() {
-	fmt.Println("hello")
-	logger := log.NewJSONLogger(os.Stdout)
-	logger.Log("foo", 123)
+func Hi() int {
+	fmt.Println("well hi")
+	return 2
 }
+
+// func init() {
+// 	fmt.Println("hello")
+// 	logger := log.NewJSONLogger(os.Stdout)
+// 	logger.Log("foo", 123)
+// }

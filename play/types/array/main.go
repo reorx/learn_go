@@ -42,6 +42,11 @@ func main() {
 
 	n := string(97)
 	fmt.Println(n)
+
+	list := []string{"aaa", "bbb", "ccc"}
+	for _, el := range list {
+		fmt.Println("element", el)
+	}
 }
 
 func Pic1(dx, dy int) [][]uint8 {

@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+var gbl string
+var gbl1 interface{}
+var gbl2 []string
+
 func main() {
 	// var <name> <type>
 	// <name> = <value>
@@ -28,6 +32,22 @@ func main() {
 	describe(i)
 	var j = "str"
 	describe(j)
+
+	gbl = "global var"
+	describe(gbl)
+	gbl1 = "global var"
+	describe(gbl1)
+
+	var aa interface{}
+	aa = 1
+	bb := make([]interface{}, 2)
+	bb[0] = aa
+	fmt.Println(aa, bb)
+
+	fmt.Printf("gbl2 %v\n", gbl2)
+	if gbl2 == nil {
+		fmt.Println("gbl2 is nil")
+	}
 }
 
 func recvarg(n int) {

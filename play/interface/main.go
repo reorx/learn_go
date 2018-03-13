@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"time"
 )
 
@@ -54,8 +55,8 @@ func main() {
 	fmt.Println(a, a.Linear())
 
 	var b Axes
-	b = a
-	b = Foo{3, 4}
+	// b = a
+	b = &Foo{3, 4}
 	fmt.Println(b, b.Linear())
 	fmt.Printf("b %#v %T %#v \n", b, b, &b)
 
@@ -71,8 +72,16 @@ func main() {
 	fmt.Println(e.Linear())
 
 	var f *Bar
+	fmt.Printf("f: %v %T\n", f, f)
+	if f == nil {
+		fmt.Println("f is nil")
+	} else {
+		fmt.Println("f is not nil")
+	}
+	// this will fail
+	// var f Bar
 	var g Axes = f
-	fmt.Println(g.Linear())
+	fmt.Println("g.Linear", g.Linear())
 
 	switchtype(1)
 	switchtype("string")
@@ -90,6 +99,11 @@ func main() {
 	recvAxes(k)
 	// l := Qua{1, 2}
 	// recvAxes(l)
+
+	vb := reflect.ValueOf(b)
+	fmt.Println("reflect", vb, vb.Type())
+	fmt.Println("describe vb.Type()")
+	describe(vb.Type())
 }
 
 func recvAxes(a Axes) {

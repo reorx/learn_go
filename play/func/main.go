@@ -61,6 +61,25 @@ func main() {
 	func() {
 		fmt.Println("declare and run")
 	}()
+
+	rb, re := method(69)
+	fmt.Println("call method", rb, re)
+}
+
+type Error struct {
+	msg string
+}
+
+func (e Error) Error() string {
+	return e.msg
+}
+
+func method(a int) (b string, e error) {
+	bl := []byte{byte(a)}
+	b = string(bl)
+	e = nil
+	e = Error{"a error"}
+	return
 }
 
 func fibonacci() func() int {

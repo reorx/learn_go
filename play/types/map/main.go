@@ -25,6 +25,10 @@ func main() {
 		"foo": {2, 3},
 	}
 	fmt.Println(b)
+
+	ne := b["notexist"]
+	fmt.Println("ne", ne)
+
 	bv := b["wtf"]
 	fmt.Println(bv)
 	delete(b, "foo")
@@ -37,6 +41,13 @@ func main() {
 
 	d := make(B)
 	fmt.Println(d)
+
+	{
+		a := map[string]int{}
+		i, ok := a["wtf"]
+		i1 := a["wtf1"]
+		fmt.Println("a['wtf']", i, ok, i1)
+	}
 
 	// fmt.Println(A.Y)
 
